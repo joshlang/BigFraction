@@ -88,3 +88,18 @@ public sealed class BigFractionConverter : JsonConverter<BigFraction>
     public override void Write(Utf8JsonWriter writer, BigFraction value, JsonSerializerOptions options) => writer.WriteStringValue(value.ToString());
 }
 ```
+
+# Details
+
+All numbers are stored using the following properties:
+
+`BigInteger Numerator` - When divided by the Denominator, yields the exact number being stored.
+
+`BigInteger Denominator` - Always a power of ten (1, 10, 100, 1000, etc).
+
+`BigInteger WholeNumber` - The number before the decimal (Example:  123.45 - WholeNumber = 123)
+
+`string DecimalString` - The number after the decimal (Example:  123.45 - DecimalString = "45") (Example:  123 - DecimalString = "")
+
+Storing `WholeNumber` and `DecimalString` allow for faster comparisons and operations, as well as faster string serialization.
+
