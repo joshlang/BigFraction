@@ -99,7 +99,8 @@ All numbers are stored using the following properties:
 
 `BigInteger WholeNumber` - The number before the decimal (Example:  123.45 - WholeNumber = 123)
 
-`string DecimalString` - The number after the decimal (Example:  123.45 - DecimalString = "45") (Example:  123 - DecimalString = "")
+`string DecimalString` - The number after the decimal (Example:  123.45 - DecimalString = "45") (Example:  123 - DecimalString = "").  Never ends with 0.
 
 Storing `WholeNumber` and `DecimalString` allow for faster comparisons and operations, as well as faster string serialization.
 
+`.ToString()` will always output a minimal string but with at least 1 digit representing the whole part.  4.5, not 4.50 ... -0.2, not -.2
