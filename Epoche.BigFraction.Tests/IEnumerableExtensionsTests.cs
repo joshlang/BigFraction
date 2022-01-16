@@ -12,7 +12,7 @@ public class IEnumerableExtensionsTests
 
     [Fact]
     [Trait("Type", "Unit")]
-    public void SumBigFraction_Empty_Returns0() => Assert.True(new BigFraction[0].SumBigFraction().IsZero);
+    public void SumBigFraction_Empty_Returns0() => Assert.True(Array.Empty<BigFraction>().SumBigFraction().IsZero);
 
     [Fact]
     [Trait("Type", "Unit")]
