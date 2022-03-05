@@ -235,6 +235,62 @@ public readonly struct BigFraction : IEquatable<BigFraction>, IEquatable<BigInte
     public static BigFraction TryParseDefault(string? value, in BigFraction defaultOnFailure) => value?.Length > 0 && TryParse(value, out var bf) ? bf : defaultOnFailure;
 
     /// <summary>
+    /// Formats a round-trippable string into a Span[char].  Culture settings have no effect.  The result contains only these characters: -.0123456789
+    /// </summary>
+    public bool TryToCharSpan(Span<char> dest, out int written)
+    {
+        written = 0;
+        if (dest.Length == 0)
+        {
+            return false;
+        }
+        if (IsZero)
+        {
+            dest[0] = '0';
+            written = 1;
+            return true;
+        }
+        if (DecimalString.Length == 0)
+        {
+            return WholeNumber.TryFormat(dest, out written, "R");
+        }
+        if (WholeNumber.IsZero)
+        {
+            if (Numerator.Sign < 0)
+            {
+                if (dest.Length < 2)
+                {
+                    return false;
+                }
+                dest[0] = '-';
+                dest[1] = '0';
+                written = 2;
+            }
+            else
+            {
+                dest[0] = '0';
+                written = 1;
+            }
+        }
+        else
+        {
+            if (!WholeNumber.TryFormat(dest[written..], out int wholeWritten, "R"))
+            {
+                return false;
+            }
+            written += wholeWritten;
+        }
+        if (dest.Length < written + 1 + decimalString!.Length)
+        {
+            return false;
+        }
+        dest[written++] = '.';
+        decimalString.AsSpan().CopyTo(dest[written..]);
+        written += decimalString.Length;
+        return true;
+    }
+
+    /// <summary>
     /// Returns a round-trippable string.  Culture settings have no effect.  The result contains only these characters: -.0123456789
     /// </summary>
     public override string ToString()
