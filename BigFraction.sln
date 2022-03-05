@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epoche.BigFraction", "Epoche.BigFraction\Epoche.BigFraction.csproj", "{C82AE731-D4CD-4221-81D0-E373C42B4637}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epoche.BigFraction.Tests", "Epoche.BigFraction.Tests\Epoche.BigFraction.Tests.csproj", "{C0498E3C-F66C-47A1-8D0E-E433F4CD4FBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C82AE731-D4CD-4221-81D0-E373C42B4637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82AE731-D4CD-4221-81D0-E373C42B4637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82AE731-D4CD-4221-81D0-E373C42B4637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82AE731-D4CD-4221-81D0-E373C42B4637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0498E3C-F66C-47A1-8D0E-E433F4CD4FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0498E3C-F66C-47A1-8D0E-E433F4CD4FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0498E3C-F66C-47A1-8D0E-E433F4CD4FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0498E3C-F66C-47A1-8D0E-E433F4CD4FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EC1EDC7-827E-4AF5-8451-225DC28DE556}
+	EndGlobalSection
+EndGlobal
