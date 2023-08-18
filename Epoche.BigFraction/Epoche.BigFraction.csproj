@@ -15,7 +15,7 @@
 	<PackageId>BigFraction</PackageId>
 	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 	<PackageProjectUrl>https://github.com/joshlang/BigFraction</PackageProjectUrl>
-	<Version>1.0.3</Version>
+	<Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -139,6 +139,10 @@ public readonly struct BigFraction : IEquatable<BigFraction>, IEquatable<BigInte
         var negative = value[0] == '-';
         if (negative)
         {
+            if (value.Length == 1)
+            {
+                return false;
+            }
             value = value[1..]; // Trim leading '-'
         }
         while (value[0] == '0')
@@ -274,7 +278,7 @@ public readonly struct BigFraction : IEquatable<BigFraction>, IEquatable<BigInte
         }
         else
         {
-            if (!WholeNumber.TryFormat(dest[written..], out int wholeWritten, "R"))
+            if (!WholeNumber.TryFormat(dest[written..], out var wholeWritten, "R"))
             {
                 return false;
             }
